@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-
 const AppointmentTable = () => {
   const [appointments, setAppointments] = useState([]);
   const [search, setSearch] = useState("");

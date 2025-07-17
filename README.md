@@ -66,8 +66,6 @@ Envy-Hospital-Administration/
 │   │   └── user.js
 │   ├── middleware/                 # Auth and other middlewares
 │   │   └── auth.js
-│   ├── controllers/                # Logic handlers (optional, for separation of logic)
-│   │   └── userController.js
 │   ├── .env
 │   ├── server.js
 │   ├── db.js
@@ -122,7 +120,7 @@ npm install
 npm start
 ```
 
-The React app will run on [http://localhost:3000](http://localhost:3000).
+The React app will run on [http://localhost:3001](http://localhost:3001).
 
 ---
 
@@ -166,25 +164,34 @@ All protected routes require a valid JWT token in the `Authorization` header.
 Create a `.env` file in `/server` directory:
 
 ```
+# Server Configuration
 PORT=3001
-MONGO_URI=mongodb://localhost:27017/doctorDB
-JWT_SECRET=your_secret_key
+
+# Database
+MONGO_URI=your_mongodb_uri  # Replace with your MongoDB connection string
+
+# Authentication
+JWT_SECRET=your_secret_key  # Use a strong, random key—consider generating one with a secure tool
+
+# Predefined Credentials
+PREDEFINED_PASSWORD=your_secure_password  #  Make sure it's long and complex
+PREDEFINED_ADMIN_NUMBER=your_admin_identifier  # Could be an ID, email, or phone number
 ```
 
 ---
 
-##  Screenshots (optional)
+##  Screenshots
 
 - Login Page  
-<img src="frontend/src/components/images/localhost_3000_(7).png" alt="Screenshot" height="600">
+<img src="../Envy Hospital (Admin)react.js/frontend/src/images/localhost_3000_ (7).png"alt="Screenshot" height="600">
 
 - Doctor Table with Search  
-<img src="frontend/src/components/images/localhost_3000_(10).png" alt="Screenshot" height="600"> 
+<img src="../Envy Hospital (Admin)react.js/frontend/src/images/localhost_3000_ (10).png" alt="Screenshot" height="600"> 
 - Appointment List View  
-<img src="frontend/src/components/images/localhost_3000_(9).png" alt="Screenshot" height="600">
+<img src="../Envy Hospital (Admin)react.js/frontend/src/images/localhost_3000_ (9).png" alt="Screenshot" height="600">
 
 - New Doctor Addition Form
-<img src="frontend/src/components/images/localhost_3000_(8).png" alt="Screenshot" height="600">
+<img src="../Envy Hospital (Admin)react.js/frontend/src/images/localhost_3000_ (8).png" alt="Screenshot" height="600">
 
 ---
 
