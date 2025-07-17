@@ -191,7 +191,7 @@ PREDEFINED_ADMIN_NUMBER=your_admin_identifier  # Could be an ID, email, or phone
 <img src="../Envy Hospital (Admin)react.js/frontend/src/images/localhost_3000_ (9).png" alt="Screenshot" height="600">
 
 - New Doctor Addition Form
-<img src="../Envy Hospital (Admin)react.js/frontend/src/images/localhost_3000_ (8).png" alt="Screenshot" height="600">
+![Screenshot](./src/images/localhost_3000_(8).png)
 
 ---
 
