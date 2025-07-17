@@ -1,70 +1,205 @@
-# Getting Started with Create React App
+# Envy Hospital Administration panel
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack Envy Hospital Administration panel Web Application built with **React**, **Node.js**, **Express**, and **MongoDB**. It allows authenticated users to **login**, **manage doctors**, and **handle appointments** securely with modern UI and encrypted credentials.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+###  Authentication
+- JWT-based login/logout system
+- Passwords encrypted using `bcryptjs`
+- Persistent login with token validation
 
-### `npm start`
+###  Doctor Management
+- Add new doctors via form
+- Edit doctor details in modal
+- Delete doctor with confirmation
+- Search doctors by name, specialty, or email (case-insensitive)
+- Responsive table with Bootstrap 5 styling
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+###  Appointment Booking
+- View booked appointment data
+- Status indicators (Confirmed, Pending, Cancelled)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+###  UX/UI
+- Clean and responsive design using Bootstrap 5
+- Search bar with live filtering
+- Modal-based edit form
+- Toast notifications via `react-toastify`
+- Icons using Bootstrap Icons
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech Stack
 
-### `npm run build`
+| Frontend | Backend | Database |
+|----------|---------|----------|
+| React    | Node.js (Express) | MongoDB (Mongoose) |
+| Bootstrap 5 | JWT Auth + bcryptjs | MongoDB Atlas / Local |
+| React Toastify | CORS Middleware | |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+Envy-Hospital-administartion/
+├── client/                 # React frontend
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── AppointmentTable.jsx
+│   │   │   ├── DoctorForm.jsx
+│   │   │   ├── DoctorTable.jsx
+│   │   │   ├── LoginOverlay.jsx
+│   │   │   └── Navbar.jsx
+│   │   ├── App.js
+│   │   ├── App.css
+│   │   └── index.js
+│   └── package.json
+├── server/                 # Node.js + Express backend
+│   ├── models/
+│   │   ├── user.js
+│   │   ├── Appointment.js
+│   │   
+│   ├── routes/
+│   │   └── user.js
+│  
+│   ├── middleware/
+│   │   └── auth.js
+│   ├── .env
+│   ├── db.js
+│   ├── server.js
+│   └── package.json
+```
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+##  Installation & Setup
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 1. Clone the repository
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+git clone https://github.com/your-username/doctor-management-system.git
+cd doctor-management-system
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+### 2. Backend Setup (Express + MongoDB)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+cd server
+npm install
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Create `.env` file:**
 
-### Code Splitting
+```
+PORT=3001
+MONGO_URI=mongodb://localhost:27017/doctorDB
+JWT_SECRET=your_jwt_secret
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Run backend:**
 
-### Analyzing the Bundle Size
+```bash
+npm run dev
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+### 3. Frontend Setup (React)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+cd client
+npm install
+npm start
+```
 
-### Advanced Configuration
+The React app will run on [http://localhost:3000](http://localhost:3000).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+##  API Endpoints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+| Method | Endpoint                         | Description              |
+|--------|----------------------------------|--------------------------|
+| POST   | `/api/user/login`               | Authenticate user        |
+| GET    | `/api/user/getdoctor`           | Get list of doctors      |
+| POST   | `/api/user/adddoctor`           | Add new doctor           |
+| PUT    | `/api/user/updatedoctor`        | Update doctor details    |
+| DELETE | `/api/user/deletedoctor?id=...` | Delete doctor by ID      |
+| GET    | `/api/user/appointments`        | Get booked appointments  |
 
-### `npm run build` fails to minify
+All protected routes require a valid JWT token in the `Authorization` header.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+##  Dependencies
+
+### Backend:
+- express
+- mongoose
+- cors
+- dotenv
+- jsonwebtoken
+- bcryptjs
+
+### Frontend:
+- react
+- react-router-dom
+- bootstrap
+- react-bootstrap
+- react-toastify
+- bootstrap-icons
+
+---
+
+## Environment Variables
+
+Create a `.env` file in `/server` directory:
+
+```
+PORT=3001
+MONGO_URI=mongodb://localhost:27017/doctorDB
+JWT_SECRET=your_secret_key
+```
+
+---
+
+##  Screenshots (optional)
+
+- Login Page  
+<img src="frontend/src/components/images/localhost_3000_7.png" alt="Screenshot" height="600">
+
+- Doctor Table with Search  
+<img src="frontend/src/components/images/localhost_3000_10.png" alt="Screenshot" height="600"> 
+
+- Appointment List View  
+<img src="frontend/src/components/images/localhost_3000_9.png" alt="Screenshot" height="600">
+
+- New Doctor Addition Form
+<img src="frontend/src/components/images/localhost_3000_8.png" alt="Screenshot" height="600">
+
+---
+
+## Future Improvements
+
+- Image upload for doctors
+- Email reminders for appointments
+- Export doctor/appointment data to PDF/Excel
+- Improvement in UI/UX
+- Addition of progressive web application(PWA)
+
+---
+
+## Contributing
+
+Contributions are welcome! Please fork this repo and open a Pull Request with your changes.
+
+---
+
+## License
+
+MIT License © 2025 Your Name
+
+---

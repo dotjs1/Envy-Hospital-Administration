@@ -1,10 +1,10 @@
 // HospitalDashboard.jsx
 import React, { useState, useEffect } from "react";
-import DoctorForm from "../frontend/src/components/DoctorForm";
-import AppointmentTable from "../frontend/src/components/AppointmentTable";
-import DoctorTable from "../frontend/src/components/DoctorTable";
-import LoginOverlay from "../frontend/src/components/LoginOverlay";
-import Navbar from "../frontend/src/components/Navbar";
+import DoctorForm from "./components/DoctorForm";
+import AppointmentTable from "./components/AppointmentTable";
+import DoctorTable from "./components/DoctorTable";
+import LoginOverlay from "./components/LoginOverlay";
+import Navbar from "./components/Navbar";
 import "./App.css";
 
 const HospitalDashboard = () => {
