@@ -100,8 +100,8 @@ npm install
 
 ```
 PORT=3001
-MONGO_URI=mongodb://localhost:27017/doctorDB
-JWT_SECRET=your_jwt_secret
+MONGO_URI=your_mongodb_uri  # Replace with your MongoDB connection string
+JWT_SECRET=your_secret_key
 ```
 
 **Run backend:**
