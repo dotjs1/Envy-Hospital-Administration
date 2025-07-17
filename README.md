@@ -183,15 +183,15 @@ PREDEFINED_ADMIN_NUMBER=your_admin_identifier  # Could be an ID, email, or phone
 ##  Screenshots
 
 - Login Page  
-<img src="./frontend//src/images/localhost_3000_ (7).png"alt="Screenshot" height="600">
+<img src="./frontend//src/components/images/localhost_3000_ (7).png"alt="Screenshot" height="600">
 
 - Doctor Table with Search  
-<img src="./frontend//src/images/localhost_3000_ (10).png" alt="Screenshot" height="600"> 
+<img src="./frontend//src/components/images/localhost_3000_ (10).png" alt="Screenshot" height="600"> 
 - Appointment List View  
-<img src="./frontend//src/images/localhost_3000_ (9).png" alt="Screenshot" height="600">
+<img src="./frontend//src/components/images/localhost_3000_ (9).png" alt="Screenshot" height="600">
 
 - New Doctor Addition Form
-<img src="./frontend//src/images/localhost_3000_ (8).png" alt="Screenshot" height="600">
+<img src="./frontend//src/components/images/localhost_3000_ (8).png" alt="Screenshot" height="600">
 ---
 
 ## Future Improvements
