@@ -183,7 +183,7 @@ PREDEFINED_ADMIN_NUMBER=your_admin_identifier  # Could be an ID, email, or phone
 ##  Screenshots
 
 - Login Page  
-<img src="./frontend//src/components/images/localhost_3000_ (7).png"alt="Screenshot" height="600">
+<img src="./frontend//src/components/images/localhost_3000_ (7).png" alt="Screenshot" height="600">
 
 - Doctor Table with Search  
 <img src="./frontend//src/components/images/localhost_3000_ (10).png" alt="Screenshot" height="600"> 
