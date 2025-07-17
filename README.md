@@ -42,10 +42,13 @@ A full-stack Envy Hospital Administration panel Web Application built with **Rea
 ## Project Structure
 
 ```
-Envy-Hospital-administartion/
-├── client/                 # React frontend
+Envy-Hospital-Administration/
+├── client/                         # React frontend
+│   ├── public/                     # Static assets
+│   │   └── index.html
 │   ├── src/
-│   │   ├── components/
+│   │   ├── images/                 # Images, icons, etc.
+│   │   ├── components/             # Reusable components
 │   │   │   ├── AppointmentTable.jsx
 │   │   │   ├── DoctorForm.jsx
 │   │   │   ├── DoctorTable.jsx
@@ -55,21 +58,25 @@ Envy-Hospital-administartion/
 │   │   ├── App.css
 │   │   └── index.js
 │   └── package.json
-├── server/                 # Node.js + Express backend
-│   ├── models/
-│   │   ├── user.js
-│   │   ├── Appointment.js
-│   │   
-│   ├── routes/
+
+├── server/                         # Express backend
+│   ├── models/                     # Mongoose models
 │   │   └── user.js
-│  
-│   ├── middleware/
+│   ├── routes/                     # API routes
+│   │   └── user.js
+│   ├── middleware/                 # Auth and other middlewares
 │   │   └── auth.js
+│   ├── controllers/                # Logic handlers (optional, for separation of logic)
+│   │   └── userController.js
 │   ├── .env
-│   ├── db.js
 │   ├── server.js
+│   ├── db.js
+│   ├── appointment.js              # API routes for appointment 
 │   └── package.json
-```
+
+├── README.md
+└── .gitignore
+
 
 ---
 
@@ -169,16 +176,15 @@ JWT_SECRET=your_secret_key
 ##  Screenshots (optional)
 
 - Login Page  
-<img src="frontend/src/components/images/localhost_3000_7.png" alt="Screenshot" height="600">
+<img src="frontend/src/components/images/localhost_3000_(7).png" alt="Screenshot" height="600">
 
 - Doctor Table with Search  
-<img src="frontend/src/components/images/localhost_3000_10.png" alt="Screenshot" height="600"> 
-
+<img src="frontend/src/components/images/localhost_3000_(10).png" alt="Screenshot" height="600"> 
 - Appointment List View  
-<img src="frontend/src/components/images/localhost_3000_9.png" alt="Screenshot" height="600">
+<img src="frontend/src/components/images/localhost_3000_(9).png" alt="Screenshot" height="600">
 
 - New Doctor Addition Form
-<img src="frontend/src/components/images/localhost_3000_8.png" alt="Screenshot" height="600">
+<img src="frontend/src/components/images/localhost_3000_(8).png" alt="Screenshot" height="600">
 
 ---
 
