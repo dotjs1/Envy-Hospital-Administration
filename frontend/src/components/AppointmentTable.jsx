@@ -8,7 +8,7 @@ const AppointmentTable = () => {
   const [loading, setLoading] = useState(true); // loading state added
 
   useEffect(() => {
-    fetch(" https://envy-hospital-backend.onrender.com/api/user/getappointment")
+    fetch(`${process.env.API_URL}/api/user/getappointment`)
       .then((res) => res.json())
       .then((data) => {
         setAppointments(data.data || []);
@@ -23,7 +23,7 @@ const AppointmentTable = () => {
   const cancelAppointment = async (id) => {
     if (!window.confirm("Are you sure you want to cancel this appointment?")) return;
     try {
-      const res = await fetch(`http://localhost:3001/api/user/cancel?id=${id}`, {
+      const res = await fetch(`${process.env.API_URL}/api/user/cancel?id=${id}`, {
         method: "DELETE",
       });
       const data = await res.json();

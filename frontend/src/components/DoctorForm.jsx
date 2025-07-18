@@ -21,7 +21,7 @@ const DoctorForm = ({ token }) => {
     e.preventDefault();
     setMessage("");
     try {
-      const response = await fetch(" https://envy-hospital-backend.onrender.com/api/user/adddoctor", {
+      const response = await fetch(`${process.env.API_URL}/api/user/adddoctor`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

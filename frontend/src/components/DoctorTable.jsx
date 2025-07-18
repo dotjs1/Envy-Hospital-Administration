@@ -64,7 +64,7 @@ const DoctorTable = ({ token }) => {
   const updateDoctor = async () => {
     if (!editingDoctor) return;
     try {
-      const response = await fetch(" https://envy-hospital-backend.onrender.com/api/user/updatedoctor", {
+      const response = await fetch(`${process.env.API_URL}/api/user/updatedoctor`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
