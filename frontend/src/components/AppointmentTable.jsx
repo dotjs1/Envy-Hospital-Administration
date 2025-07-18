@@ -8,7 +8,7 @@ const AppointmentTable = () => {
   const [loading, setLoading] = useState(true); // loading state added
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/user/getappointment")
+    fetch(" https://envy-hospital-backend.onrender.com/api/user/getappointment")
       .then((res) => res.json())
       .then((data) => {
         setAppointments(data.data || []);

@@ -19,7 +19,7 @@ const DoctorTable = ({ token }) => {
 
   const fetchDoctors = async () => {
     try {
-      const res = await fetch("http://localhost:3001/api/user/getdoctor");
+      const res = await fetch(" https://envy-hospital-backend.onrender.com/api/user/getdoctor");
       const data = await res.json();
       setDoctors(data.data || []);
     } catch (err) {
@@ -36,7 +36,7 @@ const DoctorTable = ({ token }) => {
   const deleteDoctor = async (id) => {
     if (!window.confirm("Are you sure you want to delete this doctor?")) return;
     try {
-      const res = await fetch(`http://localhost:3001/api/user/deletedoctor?id=${id}`, {
+      const res = await fetch(` https://envy-hospital-backend.onrender.com/api/user/deletedoctor?id=${id}`, {
         method: "DELETE",
       });
       const data = await res.json();
@@ -64,7 +64,7 @@ const DoctorTable = ({ token }) => {
   const updateDoctor = async () => {
     if (!editingDoctor) return;
     try {
-      const response = await fetch("http://localhost:3001/api/user/updatedoctor", {
+      const response = await fetch(" https://envy-hospital-backend.onrender.com/api/user/updatedoctor", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
