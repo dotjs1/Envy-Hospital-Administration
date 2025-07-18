@@ -6,18 +6,24 @@ const LoginOverlay = ({ onLogin }) => {
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await fetch(`${process.env.API_URL}/api/user/login`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          adminnumber: adminNumber,
-          adminpass: password
-        })
-      });
+  e.preventDefault();
+  try {
+    const res = await fetch(`${process.env.API_URL}/api/user/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        adminnumber: adminNumber,
+        adminpass: password
+      })
+    });
 
-      const data = await res.json();
+    // Safely handle JSON response
+    if (!res.ok) {
+      throw new Error(`Server error: ${res.status}`);
+    }
+
+    const text = await res.text(); // Prevent failure if response is empty
+    const data = text ? JSON.parse(text) : null;
       if (res.ok) {
         alert(data.message);
         sessionStorage.setItem('tokenAuth',data.token)
