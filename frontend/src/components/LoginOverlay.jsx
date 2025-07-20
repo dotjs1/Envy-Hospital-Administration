@@ -8,7 +8,7 @@ const LoginOverlay = ({ onLogin }) => {
   const handleSubmit = async (e) => {
   e.preventDefault();
   try {
-    const res = await fetch(`https://envy-hospital-backend.onrender.com/api/user/login`, {
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/api/user/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
