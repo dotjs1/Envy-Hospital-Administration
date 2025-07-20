@@ -2,7 +2,7 @@
 
 # dependencies
 frontend/node_modules/
-frontend/.env
+frontend/src/.env
 frontend/build/
 server/node_modules/
 server/.env
